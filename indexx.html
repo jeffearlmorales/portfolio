@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Layout</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: #fff;
+    }
+
+    /* HEADER */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        border-bottom: 1px solid #222;
+    }
+
+    .nav a {
+        color: #ccc;
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .search {
+        background: #111;
+        border: 1px solid #333;
+        padding: 5px;
+        color: #fff;
+    }
+
+    /* MAIN LAYOUT */
+    .container {
+        padding: 40px;
+    }
+
+    .top-section {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        background: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-size: 12px;
+    }
+
+    .info {
+        max-width: 300px;
+    }
+
+    /* CONTENT SECTION */
+    .content {
+        display: flex;
+        gap: 40px;
+    }
+
+    .about {
+        background: #777;
+        padding: 20px;
+        flex: 2;
+        color: #ddd;
+    }
+
+    .experience {
+        background: #888;
+        padding: 20px;
+        flex: 1;
+        position: relative;
+    }
+
+    /* TIMELINE */
+    .timeline {
+        position: relative;
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 3px solid #ddd;
+    }
+
+    .timeline-item {
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: #000;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        position: absolute;
+        left: -28px;
+        top: 5px;
+    }
+
+    /* INTRO */
+    .intro {
+        margin-top: 40px;
+    }
+
+    .intro h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .intro p {
+        color: #ccc;
+        max-width: 600px;
+    }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div>Jeff Earl Morales</div>
+    <div>
+        <input class="search" type="text" placeholder="Search">
+    </div>
+    <div class="nav">
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACTS</a>
+        <a href="#">SOON</a>
+        <a href="#">SOON</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- TOP INFO -->
+    <div class="top-section">
+        <div class="profile-img">IMAGE</div>
+        <div class="info">
+            <h3>Jeff Earl Morales</h3>
+            <p>Hello my name is jeff earl morales, i hope we get along</p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        <div class="about">
+            <h3>ABOUT</h3>
+            <h2>BUKO LYRICS</h2>
+            <p>
+                Kung inaakala mo
+                Na ang pag-ibig ko'y magbabago
+                Itaga mo sa bato
+                Dumaan man ang maraming Pasko
+                Kahit na 'di mo na abot ang sahig
+                Kahit na 'di mo na 'ko marinig
+                Ikaw pa rin ang buhay ko (Ooh-ooh)
+
+                Naalala ko pa
+                Nung pinapangarap pa lamang kita
+                Hahatid, susunduin
+                Kahit mga bituin aking susungkitin
+                
+
+                
+            </p>
+        </div>
+
+        <div class="experience">
+            <h3>EXPERIENCE</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>COMING SOON</strong>
+                    <p>WALA PA</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>COMING SOON</strong>
+                    <p>WALA PA</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>COMING SOON</strong>
+                    <p>WALA PA</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>COMING SOON</strong>
+                    <p>WALA PA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro">
+        <h1>INTRO COPY HEADLINE HERE</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
