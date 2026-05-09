@@ -1,87 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-</head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
+  <body>
     <header class="header">
+      <a href="#home" class="logo"> Jeff Earl<span> Morales</span> </a>
+      <i class="bx bx-menu" id="menu-icon"></i>
 
-        <a href="#home" class="logo">
-        Jeff Earl<span> Morales</span>
-      </a>
-        <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#textstack">Textstack</a>
+        <a href="#certificate">Certificate</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#textstack">Textstack</a>
-            <a href="#certificate">Certificate</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <button class="gradient-btn">Contact Me</button>
-
+      <button class="gradient-btn">Contact Me</button>
     </header>
 
     <section class="home" id="home">
-        <div class="home-content">
-            <h1>Hi, It's <span>Jeff </span></h1>
-            <h3>
-                Im a <span>Web Developer</span>
-            </h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit placeat numquam officiis, corporis eveniet nemo mollitia veritatis aspernatur, itaque quo excepturi sunt nisi, maxime voluptates nam nobis. Recusandae, autem consectetur!</p>
+      <div class="home-content">
+        <h1>Hi, It's <span>Jeff </span></h1>
+        <h3>Im a <span>Web Developer</span></h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
+          placeat numquam officiis, corporis eveniet nemo mollitia veritatis
+          aspernatur, itaque quo excepturi sunt nisi, maxime voluptates nam
+          nobis. Recusandae, autem consectetur!
+        </p>
 
-            <div class="social-icons">
-                <a href="#">
-                    <i class="bx bxl-github"></i>
-                </a>
+        <div class="social-icons">
+          <a href="#">
+            <i class="bx bxl-github"></i>
+          </a>
 
-                <a href="#">
-                    <i class="bx bxl-linkedin-square"></i>
-                </a>
+          <a href="#">
+            <i class="bx bxl-linkedin-square"></i>
+          </a>
 
-                <a href="#">
-                    <i class="bx bxl-instagram-alt"></i>
-                </a>
+          <a href="#">
+            <i class="bx bxl-instagram-alt"></i>
+          </a>
 
-                <a href="#">
-                    <i class="bx bxl-twitter"></i>
-                </a>
-            </div>
-
-            <div class="btn-group">
-                <a href="#" class="btn">Hire</a>
-                <a href="#contact" class="btn">Contact</a>
-            </div>
+          <a href="#">
+            <i class="bx bxl-twitter"></i>
+          </a>
         </div>
 
-        <div class="home-img">
-            <img src="image1.jpg" alt="">
+        <div class="btn-group">
+          <a href="#" class="btn">Hire</a>
+          <a href="#contact" class="btn">Contact</a>
         </div>
+      </div>
+
+      <div class="home-img">
+        <img src="image1.jpg" alt="" />
+      </div>
     </section>
 
     <section class="about" id="about">
+      <div class="about-img">
+        <img src="image1.jpg" alt="" />
+      </div>
 
-        <div class="about-img">
-            <img src="image1.jpg" alt="">
+      <div class="about-content">
+        <h2>About <span>Me</span></h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
+          recusandae doloribus repudiandae sint illo corrupti alias adipisci
+          illum dignissimos, animi odio necessitatibus. Voluptatum, sed maxime
+          animi expedita sit illo facere.
+        </p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <h2 class="heading">Services</h2>
+
+      <div class="services-container">
+        <div class="services-box">
+          <div class="services-info">
+            <i class="bx bxl-figma"></i>
+            <h4>UI / UX Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+              voluptate.
+            </p>
+          </div>
         </div>
 
-        <div class="about-content">
-            <h2>About <span>Me</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, recusandae doloribus repudiandae sint illo corrupti alias adipisci illum dignissimos, animi odio necessitatibus. Voluptatum, sed maxime animi expedita sit illo facere.</p>
-            <a href="#" class="btn">Read More</a>
+        <div class="services-box">
+          <div class="services-info">
+            <i class="bx bx-code-alt"></i>
+            <h4>Front Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+              voluptate.
+            </p>
+          </div>
         </div>
 
+        <div class="services-box">
+          <div class="services-info">
+            <i class="bx bx-code-curly"></i>
+            <h4>Backend Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+              voluptate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 class="heading">Certificate</h2>
+
+      <div class="projects-box">
+        <div class="project-card">
+          <img src="project1.png" alt="" />
+
+          <h1>Certificate 1</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptate.
+          </p>
+          <div class="btn">Review Certificate</div>
+        </div>
+
+        <div class="project-card">
+          <img src="project2.png" alt="" />
+
+          <h1>Certificate 2</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptate.
+          </p>
+          <div class="btn">Review Certificate</div>
+        </div>
+
+        <div class="project-card">
+          <img src="project3.png" alt="" />
+
+          <h1>Certificate 3</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptate.
+          </p>
+          <div class="btn">Review Certificate</div>
+        </div>
+
+        <div class="project-card">
+          <img src="project4.png" alt="" />
+
+          <h1>Certificate 4</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptate.
+          </p>
+          <div class="btn">Review Certificate</div>
+        </div>
+
+        <div class="project-card">
+          <img src="project5.png" alt="" />
+
+          <h1>Certificate 5</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptate.
+          </p>
+          <div class="btn">Review Certificate</div>
+        </div>
+
+        <div class="project-card">
+          <img src="project6.png" alt="" />
+
+          <h1>Certificate 6</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptate.
+          </p>
+          <div class="btn">Review Certificate</div>
+        </div>
+      </div>
     </section>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
