@@ -17,6 +17,7 @@
 html {
   font-size: 60%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -409,29 +410,58 @@ section {
 .contact {
   background-color: var(--bg-color);
 }
+
 .contact h2 {
   margin-bottom: 3rem;
-  color: var(--text-color);
 }
+
 .contact form {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  margin: 5rem 0;
+  max-width: 1000px;
+  margin: 5rem auto;
   text-align: center;
 }
-.contact form .input-box input,
-.contact from textarea {
-  width: 100px;
-  padding: 2.5rem;
-  font-size: 1.8rem;
+
+/* Forces the two groups to sit side-by-side */
+.contact form .input-group,
+.contact form .input-group-2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Styles the inputs so they are dark with orange borders */
+.contact form .input-group input,
+.contact form .input-group-2 textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
   color: var(--text-color);
-  background-color: var(--bg-color);
-  border-radius: 2rem;
+  background: var(--bg-color); /* Keeps it dark */
+  border-radius: 1rem;
   border: 2px solid var(--main-color);
-  margin: 1.5rem 0;
+  outline: none;
+}
+
+.contact form .input-group-2 textarea {
   resize: none;
+  height: 22rem; /* Adjust this to match the height of the 4 inputs */
+}
+
+.contact form .btn {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+/* --- THE REST OF YOUR CSS (FOOTER) STARTS HERE --- */
+
+.footer {
+  background-color: var(--second-bg-color);
+  padding: 50px 0;
 }
 
 .footer {
@@ -453,4 +483,69 @@ section {
   color: white;
   border-bottom: 3px solid transparent;
   transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover {
+  border-bottom: 3px solid var(--main-color);
+}
+.footer .copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+@media (max-width: 1285px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+
+    display: none;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--text-color);
+  }
+  .navbar.active {
+    display: block;
+  }
+  .gradient-btn {
+    display: none;
+  }
+  .home {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+  .home-img img {
+    width: 56vw;
+  }
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about h2 {
+    text-align: center;
+    margin: 2rem;
+  }
+  .about img {
+    width: 56vw;
+  }
+  .contact form {
+    flex-direction: column;
+  }
 }
