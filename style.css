@@ -42,7 +42,8 @@ body {
 #menu-icon {
   font-size: 3.5rem;
   color: var(--main-color);
-  display: none;
+  display: none; /* Remember to change this to 'block' in media queries! */
+  margin-left: auto;
 }
 
 .logo {
@@ -133,14 +134,12 @@ section {
 }
 
 .home-img img {
-  width: 32vw;
-  height: 32vw;
-  /* force equal height */
-  object-fit: cover;
-  /* crop nicely */
-  border-radius: 50%;
-  box-shadow: 0 0 25px var(--main-color);
-  transition: 0.4s ease-in-out;
+  width: 400px; /* Or whatever size you prefer */
+  height: 400px; /* Keep width and height the same for a perfect circle/oval base */
+  object-fit: cover; /* This prevents the "squashing" effect */
+  border-radius: 50%; /* This makes it a perfect circle if width/height are equal */
+  border: 4px solid var(--main-color);
+  box-shadow: 0 0 2rem var(--main-color);
 }
 
 .home-img img:hover {
@@ -218,14 +217,12 @@ section {
 }
 
 .about-img img {
-  width: 32vw;
-  height: 32vw;
-  /* force equal height */
-  object-fit: cover;
-  /* crop nicely */
-  border-radius: 50%;
-  box-shadow: 0 0 25px var(--main-color);
-  transition: 0.4s ease-in-out;
+  width: 400px; /* Or whatever size you prefer */
+  height: 400px; /* Keep width and height the same for a perfect circle/oval base */
+  object-fit: cover; /* This prevents the "squashing" effect */
+  border-radius: 50%; /* This makes it a perfect circle if width/height are equal */
+  border: 4px solid var(--main-color);
+  box-shadow: 0 0 2rem var(--main-color);
 }
 
 .about-img img:hover {
@@ -532,11 +529,20 @@ section {
     text-align: center;
   }
   .home-img img {
-    width: 56vw;
+    width: 60vw; /* Scale based on screen width */
+    height: auto; /* IMPORTANT: This maintains the natural proportions */
+    aspect-ratio: 1 / 1; /* Forces the image to stay square/circular */
+    object-fit: cover;
   }
   .about {
     flex-direction: column-reverse;
     text-align: center;
+  }
+  .about-img img {
+    width: 60vw; /* Scale based on screen width */
+    height: auto; /* IMPORTANT: This maintains the natural proportions */
+    aspect-ratio: 1 / 1; /* Forces the image to stay square/circular */
+    object-fit: cover;
   }
   .about h2 {
     text-align: center;
@@ -546,6 +552,36 @@ section {
     width: 56vw;
   }
   .contact form {
+    flex-direction: column;
+  }
+}
+
+/* --- MOBILE OPTIMIZATIONS FOR SMALL PHONES (iPhone SE, etc.) --- */
+@media (max-width: 450px) {
+  /* Shrink global font sizes so nothing overflows */
+  html {
+    font-size: 55%;
+  }
+
+  /* Make the hero image slightly smaller so it doesn't take up the whole screen */
+  .home-img img {
+    width: 80vw;
+  }
+
+  /* Reduce huge gaps so the user doesn't have to scroll forever */
+  .home {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  /* Adjust the navbar width for very thin screens */
+  .navbar {
+    width: 70%;
+  }
+
+  /* Stack form inputs vertically if they aren't already */
+  .contact form .input-group {
+    display: flex;
     flex-direction: column;
   }
 }
