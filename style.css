@@ -566,6 +566,10 @@ section {
     font-size: 45%;
   }
 
+  .about-img img {
+    width: 80vw;
+  }
+
   /* Make the hero image slightly smaller so it doesn't take up the whole screen */
   .home-img img {
     width: 80vw;
