@@ -491,6 +491,9 @@ section {
 }
 
 @media (max-width: 1285px) {
+  html {
+    font-size: 55%; /* Everything using 'rem' shrinks to 55% of original size */
+  }
   #menu-icon {
     display: block;
   }
@@ -560,7 +563,7 @@ section {
 @media (max-width: 450px) {
   /* Shrink global font sizes so nothing overflows */
   html {
-    font-size: 55%;
+    font-size: 45%;
   }
 
   /* Make the hero image slightly smaller so it doesn't take up the whole screen */
