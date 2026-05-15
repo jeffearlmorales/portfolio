@@ -1,3 +1,57 @@
+// 1. ENTRANCE: Staggered "Assembly"
+window.addEventListener("DOMContentLoaded", () => {
+  const timeline = anime.timeline({
+    easing: "easeOutExpo",
+    duration: 1000,
+  });
+
+  timeline
+    .add({
+      targets: "header",
+      translateY: [-50, 0],
+      opacity: [0, 1],
+    })
+    .add(
+      {
+        targets: "section > *",
+        translateY: [30, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(100), // Elements pop up one by one
+      },
+      "-=600",
+    ); // Starts slightly before header finishes
+});
+
+// 2. EXIT: The "Dissolve"
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    const destination = this.getAttribute("href");
+
+    if (
+      destination &&
+      destination.includes(".html") &&
+      !destination.startsWith("#")
+    ) {
+      e.preventDefault();
+
+      // Close menu if open
+      const navbar = document.querySelector(".navbar");
+      if (navbar) navbar.classList.remove("active");
+
+      anime({
+        targets: "body > *",
+        opacity: [1, 0],
+        scale: 0.98, // Slight shrink
+        duration: 400,
+        easing: "easeInQuad",
+        complete: () => {
+          window.location.href = destination;
+        },
+      });
+    }
+  });
+});
+
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 

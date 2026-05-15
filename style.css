@@ -25,6 +25,16 @@ body {
   color: var(--text-color);
 }
 
+/* Pre-hide sections for the staggered reveal */
+section > * {
+  opacity: 0;
+}
+
+body {
+  background-color: #080808;
+  overflow-x: hidden;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -459,44 +469,31 @@ section {
 .footer {
   background-color: var(--second-bg-color);
   padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; /* This is the exact space between icons and text */
 }
 
-.footer {
-  background-color: var(--second-bg-color);
-  padding: 50px 0;
+/* This is the part that was causing the gap */
+.footer .social-icons a {
+  margin: 0 0.5rem; /* Removed the 3rem top/bottom margin */
 }
-.footer .social-icons {
-  text-align: center;
-}
-.footer ul {
-  text-align: center;
-  font-size: 1.8rem;
-}
-.footer ul li {
-  display: inline-block;
-  margin-left: 20px;
-}
-.footer ul li a {
-  color: white;
-  border-bottom: 3px solid transparent;
-  transition: 0.3s ease-in-out;
-}
-.footer ul li a:hover {
-  border-bottom: 3px solid var(--main-color);
-}
+
 .footer .copyright {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 16px;
+  margin-top: 0; /* Resetting this so gap handles the spacing */
+  font-size: 1.8rem;
+  color: var(--text-color);
 }
 
 .about-footer {
-  background-color: #000000; /* Pure black */
+  background-color: #000000;
 }
 
 @media (max-width: 1285px) {
   html {
-    font-size: 55%; /* Everything using 'rem' shrinks to 55% of original size */
+    font-size: 55%;
   }
   #menu-icon {
     display: block;
@@ -511,7 +508,6 @@ section {
     border-bottom-left-radius: 2rem;
     border-left: 2px solid var(--main-color);
     border-bottom: 2px solid var(--main-color);
-
     display: none;
   }
   .navbar a {
@@ -536,65 +532,73 @@ section {
     align-items: center;
     text-align: center;
   }
-  .home-img img {
-    width: 60vw; /* Scale based on screen width */
-    height: auto; /* IMPORTANT: This maintains the natural proportions */
-    aspect-ratio: 1 / 1; /* Forces the image to stay square/circular */
+
+  /* REMARK 1: Minimize self-portrait for tablet */
+  .home-img img,
+  .about-img img {
+    width: 300px; /* Reduced from 60vw for better control */
+    height: 300px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
   }
+
   .about {
     flex-direction: column-reverse;
     text-align: center;
-  }
-  .about-img img {
-    width: 60vw; /* Scale based on screen width */
-    height: auto; /* IMPORTANT: This maintains the natural proportions */
-    aspect-ratio: 1 / 1; /* Forces the image to stay square/circular */
-    object-fit: cover;
   }
   .about h2 {
     text-align: center;
     margin: 2rem;
   }
-  .about img {
-    width: 56vw;
-  }
+
+  /* REMARK 2: Make contact form consistent */
   .contact form {
     flex-direction: column;
+    width: 100%;
+    max-width: 600px; /* Keeps it from getting too wide on tablets */
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+  .contact form .input-group,
+  .contact form .input-group-2 {
+    width: 100%;
   }
 }
 
-/* --- MOBILE OPTIMIZATIONS FOR SMALL PHONES (iPhone SE, etc.) --- */
+/* --- MOBILE OPTIMIZATIONS FOR SMALL PHONES --- */
 @media (max-width: 450px) {
-  /* Shrink global font sizes so nothing overflows */
   html {
     font-size: 45%;
   }
 
+  /* REMARK 1: Minimize self-portrait even more for phones */
+  .home-img img,
   .about-img img {
-    width: 80vw;
+    width: 200px; /* Small and clean */
+    height: 200px;
   }
 
-  /* Make the hero image slightly smaller so it doesn't take up the whole screen */
-  .home-img img {
-    width: 80vw;
-  }
-
-  /* Reduce huge gaps so the user doesn't have to scroll forever */
   .home {
     gap: 2rem;
     margin-top: 2rem;
   }
 
-  /* Adjust the navbar width for very thin screens */
   .navbar {
     width: 70%;
   }
 
-  /* Stack form inputs vertically if they aren't already */
+  /* REMARK 2: Perfect Form Alignment */
   .contact form .input-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .contact form .input-group input,
+  .contact form .input-group-2 textarea,
+  .contact form .btn {
+    width: 100%; /* All elements are now exactly the same width */
+    margin-bottom: 1.5rem;
   }
 }
 
