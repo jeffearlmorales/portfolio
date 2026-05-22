@@ -490,7 +490,6 @@ section {
 .about-footer {
   background-color: #000000;
 }
-
 @media (max-width: 1285px) {
   html {
     font-size: 55%;
@@ -542,9 +541,13 @@ section {
     object-fit: cover;
   }
 
+  /* FIXED: Added display flex, column alignment, and top spacing to prevent header overlap */
   .about {
-    flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    margin-top: 10rem; /* 👈 Pushes the layout down so your fixed header doesn't overlap the picture */
   }
   .about h2 {
     text-align: center;
